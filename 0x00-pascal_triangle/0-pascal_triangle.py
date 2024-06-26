@@ -5,7 +5,7 @@
 def pascal_triangle(n):
     """returns list of Pascal triangle solution"""
     pasc_sol = []
-    
+
     # checks for integers qualification
     if n <= 0:
         return triangle
@@ -17,5 +17,5 @@ def pascal_triangle(n):
             else:
                 tri_list.append(pasc_sol[x-1][y-1] + pasc_sol[x-1][y])
         pasc_sol.append(tri_list)
-    #Display Triangle
+    # Display Triangle
     return pasc_sol
