@@ -8,7 +8,7 @@ def pascal_triangle(n):
 
     # checks for integers qualification
     if n <= 0:
-        return triangle
+        return pasc_sol
     for x in range(n):
         tri_list = []
         for y in range(x+1):
