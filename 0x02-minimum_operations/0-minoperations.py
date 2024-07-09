@@ -11,7 +11,7 @@ def minOperations(n):
     count_ops = 0
     clipper = 0
     complete = 1
-    
+
     while complete < n:
         if clipper == 0:
             clipper = complete
