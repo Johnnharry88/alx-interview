@@ -2,6 +2,7 @@
 """ A module that reads stdin line by line and computes metrics"""
 
 import sys
+import errno
 
 # holds count of all status code in a dictionary
 status_code = {'200': 0, '301': 0, '400': 0, '401': 0, '403': 0,
@@ -31,7 +32,7 @@ try:
             # reset count track to 0 if it gets to 10
             if rec == 10:
                 rec = 0
-                print('File size: {}'.format(size_t))
+                print(f'^CFile size: {size_t}')
 
                 # prints outs status code count
                 for x, y in sorted(status_code.items()):
@@ -39,10 +40,13 @@ try:
                         print('{}: {}'. format(x, y))
 
 except Exception as err:
-    pass
+        pass
+except IDError as x:
+    if f.errno == errno.EPIPE:
+        pass
 
 finally:
-    print('File size: {}'.format(size_t))
-    for x, y in sorted(status_code.items(0)):
+    print(f'^CFile size: {size_t}')
+    for x, y in sorted(status_code.items()):
         if y != 0:
             print('{}: {}'.format(x, y))
