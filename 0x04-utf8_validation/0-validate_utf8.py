@@ -21,7 +21,7 @@ def validUTF8(data):
             if s - x >= space:
                 n_body = list(map(
                     lambda n: n & 0b11000000 == 0b10000000,
-                    data[n + 1: n + space],
+                    data[x + 1: x + space],
                 ))
                 if not all(n_body):
                     return False
