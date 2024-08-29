@@ -1,4 +1,4 @@
-#!/us/bin/python3
+#!/usr/bin/python3
 """Module that makes change using fewest possible coins"""
 
 from math import trunc
