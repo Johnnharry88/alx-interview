@@ -1,4 +1,4 @@
-#!/usr/python3
+#!/usr/bin/python3
 """Module for solving  primegame"""
 
 def isWinner(x, nums):
